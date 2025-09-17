@@ -1,6 +1,6 @@
-# React + Vite + Tailwind CSS
+# Brijesh Portfolio
 
-A modern React application built with Vite and styled with Tailwind CSS.
+A modern, responsive portfolio website built with React, Vite, and Tailwind CSS to showcase professional work and skills.
 
 ## Features
 
@@ -9,6 +9,8 @@ A modern React application built with Vite and styled with Tailwind CSS.
 - 🎨 **Tailwind CSS** - Utility-first CSS framework
 - 🔥 **Hot Module Replacement** - Instant development feedback
 - 📦 **Modern ES modules** - Tree-shaking and optimized bundles
+- 📱 **Responsive Design** - Mobile-first approach
+- 🎯 **Performance Optimized** - Fast loading and smooth animations
 
 ## Getting Started
 
