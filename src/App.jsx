@@ -1,44 +1,42 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+/**
+ * Main App Component
+ * 
+ * Portfolio application matching the second image design
+ * Features navigation, elegant typography, and interactive elements
+ * 
+ * @component
+ * @returns {JSX.Element} Main App component
+ */
+import React from 'react';
+import { AnimatedSquares, Header, Navigation } from '@/components';
+import { useResponsive } from '@/hooks';
+import 'segoe-fonts';
 
 function App() {
-  const [count, setCount] = useState(0)
+  // Get responsive utilities
+  const { isMobile, deviceType } = useResponsive();
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center">
-      <div className="text-center space-y-8 p-8">
-        <div className="flex justify-center space-x-8">
-          <a href="https://vite.dev" target="_blank" className="transition-transform hover:scale-110">
-            <img src={viteLogo} className="h-24 w-24" alt="Vite logo" />
-          </a>
-          <a href="https://react.dev" target="_blank" className="transition-transform hover:scale-110">
-            <img src={reactLogo} className="h-24 w-24 animate-spin" alt="React logo" />
-          </a>
-        </div>
-        
-        <h1 className="text-6xl font-bold text-gray-800 mb-8">
-          Vite + React + Tailwind
-        </h1>
-        
-        <div className="bg-white rounded-lg shadow-lg p-8 max-w-md mx-auto">
-          <button 
-            onClick={() => setCount((count) => count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 shadow-md hover:shadow-lg"
-          >
-            Count is {count}
-          </button>
-          <p className="mt-4 text-gray-600">
-            Edit <code className="bg-gray-100 px-2 py-1 rounded text-sm">src/App.jsx</code> and save to test HMR
-          </p>
-        </div>
-        
-        <p className="text-gray-500">
-          Click on the Vite and React logos to learn more
-        </p>
-      </div>
+    <div className="relative min-h-screen w-full overflow-hidden" style={{ backgroundColor: '#F2F1E0' }}>
+      {/* Top Navigation */}
+      <Navigation />
+      
+      {/* Animated Background Squares */}
+      <AnimatedSquares 
+        speed={isMobile ? 0.2 : 0.3} // Very subtle animation
+        squareSize={isMobile ? 30 : 70} // Smaller, more subtle squares
+        direction="down"
+        borderColor="rgb(255, 255, 255)" // More subtle border
+        hoverFillColor="rgb(255, 253, 253)" // Dark hover effect
+        isMobile={isMobile}
+      />
+      
+      {/* Main Content */}
+      <main className="relative z-30">
+        <Header/>
+      </main>
     </div>
-  )
+  );
 }
 
 export default App
